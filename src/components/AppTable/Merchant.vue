@@ -65,15 +65,13 @@
           </td>
 
           <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+            <span
+              role="button"
+              class="text-orange hover:opacity-80 cursor-pointer"
+            >
+              Suspend
+            </span>
             <!-- <div class="flex justify-end space-x-3">
-              <span
-                role="button"
-                v-if="merchant.status === 'active'"
-                @click="$emit('suspend', merchant.id)"
-                class="text-orange hover:opacity-80 cursor-pointer"
-              >
-                Suspend
-              </span>
               <span
                 role="button"
                 v-else

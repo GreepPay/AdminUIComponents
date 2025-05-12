@@ -15,7 +15,7 @@
         <col class="w-1/8" />
         <col class="w-1/8" />
         <col class="w-1/8" />
-        <col class="w-1/8" />
+        <!-- <col class="w-1/8" /> -->
       </colgroup>
 
       <thead class="bg-white">
@@ -24,7 +24,7 @@
           <th class="px-6 py-3 text-left font-medium text-gray-500">Type</th>
           <th class="px-6 py-3 text-left font-medium text-gray-500">Time</th>
           <th class="px-6 py-3 text-left font-medium text-gray-500">Amount</th>
-          <th class="px-6 py-3 text-right font-medium text-gray-500">Action</th>
+          <!-- <th class="px-6 py-3 text-right font-medium text-gray-500">Action</th> -->
         </tr>
       </thead>
 
@@ -70,7 +70,7 @@
             {{ `${transaction.amount} ${transaction.currency} ` }}
           </td>
 
-          <td
+          <!-- <td
             class="px-6 py-4 whitespace-nowrap text-right text-very-light-gray"
           >
             <span
@@ -79,7 +79,7 @@
             >
               Freeze Account
             </span>
-          </td>
+          </td> -->
         </tr>
 
         <tr v-else>

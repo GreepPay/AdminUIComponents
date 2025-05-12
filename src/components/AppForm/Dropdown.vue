@@ -8,6 +8,7 @@
       aria-expanded="true"
       aria-labelledby="listbox-label"
     >
+      <app-loading :loading="loading" />
       <span :class="!selectedOption && '!bg-red-500'">
         {{ selectedOption?.label || placeholder }}
       </span>
@@ -40,10 +41,11 @@
 <script lang="ts">
   import { defineComponent, ref, watch, PropType } from "vue"
   import AppIcon from "../AppIcon"
+  import AppLoading from "../AppLoading"
 
   export default defineComponent({
     name: "CustomDropdown",
-    components: { AppIcon },
+    components: { AppIcon, AppLoading },
     props: {
       options: {
         type: Array as PropType<Array<{ label: string; value: string }>>,
@@ -56,6 +58,10 @@
       placeholder: {
         type: String,
         default: "Select an option",
+      },
+      loading: {
+        type: Boolean,
+        default: false,
       },
     },
     emits: ["update:modelValue"],

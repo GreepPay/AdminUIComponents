@@ -9,9 +9,12 @@
     <p
       class="flex items-center space-x-2 whitespace-nowrap text-sm text-very-light-gray leading-6"
     >
-      {{ pagination.firstItem }} - {{ pagination.lastItem }} of
-      {{ pagination.total }}
+      <app-loading :loading="loading" />
 
+      <span v-if="!loading">
+        {{ pagination.firstItem }} - {{ pagination.lastItem }} of
+        {{ pagination.total }}
+      </span>
       <!-- {{ startItem }} - {{ endItem }} of {{ totalItems }} -->
     </p>
 
@@ -51,11 +54,13 @@
 <script lang="ts">
   import { defineComponent, computed } from "vue"
   import AppIcon from "../AppIcon"
+  import AppLoading from "../AppLoading"
 
   export default defineComponent({
     name: "AppPagination",
     components: {
       AppIcon,
+      AppLoading,
     },
     props: {
       pagination: {
@@ -83,6 +88,10 @@
       customClass: {
         type: String,
         default: "",
+      },
+      loading: {
+        type: Boolean,
+        default: false,
       },
     },
     emits: ["update:page"],
